@@ -8,28 +8,35 @@
     <title>Document</title>
 </head>
 <body>
+
+<button onclick="window.init()">Initialize</button>
+
+<h1>Canvas:</h1>
+<canvas id="canvas" width="100" height="100" style="border:1px solid #000000;"></canvas>
+
 <h1>OUTPUT</h1>
 <ouput id="output"></ouput>
-
-<canvas id="canvas" width="800"></canvas>
 
 <script>
 
     function report(newContent){
         var output = document.getElementById('output');
         setTimeout(function() { delayedInnerHTML(newContent) }, 100);
-        output.innerHTML += newContent;
 
     }
-    function start(){
-        report('J')
+    function start(evt){
+        evt.preventDefault();
+        console.log('start')
+        report('J<br>')
     }
     function move(){
-        report('O')
+        console.log('move')
+        report('O<br>')
 
     }
     function end(){
-        report('DETE')
+        console.log('end')
+        report('DETE<br>')
 
     }
    function init() {
@@ -40,11 +47,6 @@
        canvas.addEventListener('touchend', end, false);
 
    }
-
-    init();
 </script>
-
-
-
 </body>
 </html>

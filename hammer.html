@@ -12,35 +12,49 @@
 <div id="zone"></div>
 <h1>OUTPUT</h1>
 <ouput id="output"></ouput>
-<script src="node_modules/hammerjs/hammer.min.js">
+
+<script src="node_modules/hammerjs/hammer.js">
 
     function report(newContent){
         var output = document.getElementById('output');
         setTimeout(function() { delayedInnerHTML(newContent) }, 100);
         output.innerHTML += newContent;
-
     }
 
-    // get a reference to an element
-    var zone = document.getElementById('zone');
 
-    // create a manager for that element
+//    // get a reference to an element
+//    var zone = document.getElementById('zone');
+//
+//    // create a manager for that element
+//    var hammerZone = new Hammer.Manager(zone);
+//
+//    // create a recognizer
+//    var Rotate = new Hammer.Rotate();
+//
+//    // add the recognizer
+//    hammerZone.add(Rotate);
+//
+//    // subscribe to events
+//    hammerZone.on(
+//            'rotate', function(e) {
+//        // do something cool
+//        var rotation = Math.round(e.rotation);
+//        zone.style.transform = 'rotate('+rotation+'deg)';
+//    });
+
+    var zone = document.getElementById('zone');
     var hammerZone = new Hammer.Manager(zone);
 
-    // create a recognizer
-    var Rotate = new Hammer.Rotate();
-
-    // add the recognizer
-    hammerZone.add(Rotate);
-
-    // subscribe to events
     hammerZone.on(
-            'rotate', function(e) {
-        // do something cool
-        var rotation = Math.round(e.rotation);
-        zone.style.transform = 'rotate('+rotation+'deg)';
-    });
-
+        'swiperRight', function (e) {
+            e.preventDefault();
+            console.log('Right');
+        }).on(
+            'swiperLeft', function (e) {
+                e.preventDefault();
+                console.log('Left')
+            })
+    
     //Swipe left sobre el div zone -->console.log()
     //Swipe right sobre el div zone -->console.log()
 </script>
