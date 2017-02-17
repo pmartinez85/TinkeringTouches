@@ -8,21 +8,31 @@
     <title>Document</title>
 </head>
 <body>
+<h1>OUTPUT</h1>
+<ouput id="output" width="800"></ouput>
+
 <canvas id="canvas" width="800"></canvas>
+
 <script>
+
+    function report(newContent){
+        var output = document.getElementById('output')
+        output.innerHTML += newContent;
+
+    }
     function start(){
-        console.log('Start')
+        report('Start')
     }
     function move(){
-        console.log('Move')
+        report('Move')
 
     }
     function end(){
-        console.log('End')
+        report('End')
 
     }
    function init() {
-       var canvas = document.getElementsById('canvas');
+       var canvas = document.getElementById('canvas');
 
        canvas.addEventListener('touchstart', start(), false);
        canvas.addEventListener('touchstart', end(), false);
