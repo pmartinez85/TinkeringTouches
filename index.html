@@ -9,38 +9,42 @@
 </head>
 <body>
 <h1>OUTPUT</h1>
-<ouput id="output" width="800"></ouput>
+<ouput id="output"></ouput>
 
 <canvas id="canvas" width="800"></canvas>
 
 <script>
 
     function report(newContent){
-        var output = document.getElementById('output')
+        var output = document.getElementById('output');
+        setTimeout(function() { delayedInnerHTML(newContent) }, 100);
         output.innerHTML += newContent;
 
     }
     function start(){
-        report('Start')
+        report('J')
     }
     function move(){
-        report('Move')
+        report('O')
 
     }
     function end(){
-        report('End')
+        report('DETE')
 
     }
    function init() {
        var canvas = document.getElementById('canvas');
 
-       canvas.addEventListener('touchstart', start(), false);
-       canvas.addEventListener('touchstart', move(), false);
-       canvas.addEventListener('touchstart', end(), false);
+       canvas.addEventListener('touchstart', start, false);
+       canvas.addEventListener('touchmove', move, false);
+       canvas.addEventListener('touchend', end, false);
 
    }
 
-   init();
+    init();
 </script>
+
+
+
 </body>
 </html>
