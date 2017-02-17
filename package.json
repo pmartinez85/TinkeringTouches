@@ -1,0 +1,24 @@
+{
+  "name": "TinkeringTouches",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "hammerjs": "^2.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmartinez85/TinkeringTouches.git"
+  },
+  "keywords": [],
+  "author": "Pedro <pmartinez1085@gmail.com> (https://github.com/pmartinez85)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmartinez85/TinkeringTouches/issues"
+  },
+  "homepage": "https://github.com/pmartinez85/TinkeringTouches#readme"
+}
